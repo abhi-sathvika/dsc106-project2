@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Project 2 Report</title>
+    <style>
+      :root {
+        --color-neutral-95: hsl(220 10% 95%);
+        --color-neutral-90: hsl(220 10% 90%);
+        --color-neutral-80: hsl(220 10% 80%);
+        --color-neutral-70: hsl(220 10% 70%);
+        --color-neutral-60: hsl(220 10% 60%);
+        --color-neutral-50: hsl(220 10% 50%);
+        --color-neutral-40: hsl(220 10% 40%);
+        --color-neutral-30: hsl(220 10% 30%);
+        --color-neutral-20: hsl(220 10% 20%);
+        --color-neutral-10: hsl(220 10% 10%);
+      }
+
+      html {
+        font: 100%/1.5 system-ui;
+        counter-reset: figure;
+        background: var(--color-neutral-95);
+        max-width: min(75vw, 80em);
+        margin: 0 auto;
+      }
+
+      /* Headings */
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        line-height: 1.1;
+        font-weight: 600;
+        text-wrap: balance;
+      }
+
+      h1,
+      h2 {
+        border-bottom: 1px solid var(--color-neutral-80);
+        padding-bottom: 0.2em;
+      }
+
+      h1 {
+        margin-block: 1em 0.5rem;
+        font-size: clamp(2.5em, 150% + 2vh + 2vw, 10vmin);
+        font-weight: 800;
+
+        small {
+          display: block;
+          width: fit-content;
+          padding: 0.2em 0.5em;
+          margin-inline: auto;
+          color: white;
+          background: var(--color-neutral-40);
+          font-size: 40%;
+          text-transform: uppercase;
+          white-space: nowrap;
+        }
+      }
+
+      h2 {
+        font-size: 180%;
+        color: var(--color-neutral-30);
+      }
+
+      h3 {
+        font-size: 130%;
+      }
+
+      /* Lists */
+
+      ul,
+      ol {
+        padding-inline-start: 2em;
+      }
+
+      li {
+        &::marker {
+          color: var(--color-neutral-40);
+        }
+
+        + li {
+          margin-top: 0.2em;
+        }
+      }
+
+      /* Sectioning elements */
+
+      header {
+        padding-block: 1em;
+        text-align: center;
+      }
+
+      main {
+        background: white;
+        color: var(--color-neutral-20);
+        border-radius: 1rem;
+        padding: 0.1rem 2rem;
+      }
+
+      /* Figures */
+
+      figure {
+        margin: 1em 0;
+        padding: 0.5rem;
+        margin-inline: -0.5em;
+        border: 1px solid var(--color-neutral-80);
+        box-shadow: 0 0.1em 0.2em var(--color-neutral-95);
+        text-align: center;
+        background: white;
+        
+
+        > figcaption {
+          font: 500 75% var(--font-sans);
+          background: var(--color-neutral-95);
+          padding: 0.5rem;
+          margin: -0.5rem;
+          margin-top: 0.5rem;
+          counter-increment: figure;
+          text-align: left;
+
+          &::before {
+            content: 'Figure ' counter(figure) ': ';
+            font-weight: bold;
+            color: var(--color-neutral-40);
+          }
+
+          a:not(:hover, :focus, :active) {
+            color: inherit;
+            text-decoration: underline;
+            text-decoration-color: color-mix(
+              in lab,
+              currentColor,
+              transparent 70%
+            );
+          }
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>
+        <small>Assignment 4</small>
+        Persuasive or Deceptive Visualization?
+      </h1>
+
+      <p><strong>Abhi Sathvika Goriparthy</strong> — <em>agoriparthy@ucsd.edu</em></p>
+    </header>
+
+    <main>
+      <h2>Proposition: White police officers receive disproportionately more substantiated complaints compared to officers of other ethnicities.</h2>
+
+      <section>
+        <h3>FOR the Proposition</h3>
+
+        <figure>
+          <img src="images\plot1_deceptive.png" alt="" width="1000" height="600"/>
+          <figcaption>Plot 1 (Deceptive to support Proposition)</figcaption>
+        </figure>
+
+        <p>Design Decisions and Rationale:</p>
+
+        <ul>
+          <li>
+            Bar Chart with Absolute Values.
+            [Score: -2 (Deceptive)]
+            The decision to use absolute counts without adjusting for the number of officers in each ethnicity group creates a misleading perception of disparity. This makes it appear as if white officers are disproportionately receiving complaints, when in reality, the total number of officers in each ethnic group is skewing the data. This choice enables the argument to be visually compelling, however it also misrepresents the context by ignoring population size differences between ethnic groups.
+            </li>
+          <li>
+            Title and Subtitle.
+            [Score: -2 (Deceptive)]
+            The title, "Which Officer Demographic Group Has the Highest Number of Substantiated Complaints?" and the subtitle, "White police officers appear to receive disproportionately more complaints," contain implicit bias. The language is not neutral and is instead coming from a biased standpoint.
+            This enhances the persuasive effect and leads the reader to a biased conclusion that may not be fully supported by the data.
+            </li>
+          <li>
+            Color Choices.
+            [Score: 0 (Neutral)]
+            The use of different colors (grey, coral, and dodger blue) to represent each disposition (substantiated, unsubstantiated, and other) is straightforward and visually distinct. The color scheme works well to differentiate categories but doesn’t have any intended manipulation. Instead of typical red and green for depicting substantiated (bad) and unsubstantiated (good), using coral and blue distinguishes both the categories similar to red and green. But it also keep the plot accessible for color blind people.
+            </li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>AGAINST the Proposition</h3>
+
+        <figure>
+          <img src="images\plot2_earnest.png" alt="" width="1000" height="600"/>
+          <figcaption>Plot 2 (Earnest Against Proposition)</figcaption>
+        </figure>
+
+        <p>Design Decisions and Rationale:</p>
+
+        <ul>
+          <li>Proportionally Adjusted Bar Chart.
+            [Score: 2 (Earnest)]
+            This visualization normalizes the data by displaying proportions rather than absolute counts. This provides a more accurate representation of complaint rates per officer ethnicity, adjusting for population size differences between ethnic groups. This choice offers a clearer and more honest depiction of the data, avoiding the misleading effects of the absolute count approach.
+            </li>
+          <li>Title and Subtitle.
+            [Score: 2 (Earnest)]
+            The title, "Which Officer Demographic Group Has the Highest Proportion of Substantiated Complaints?" and the subtitle, "Complaint rates are relatively balanced across ethnic groups after adjusting for population of officers within each group," are neutral and descriptive. The title correctly positions proportions as the comparison attribute. The subtitle is open ended to avoid any implicit bias. These choices emphasize the proportional relationship and are informative, presenting a balanced view without introducing bias or slanted language.
+            </li>
+          <li>Color Choices.
+            [Score: 0 (Neutral)]
+            Similar to the first visualization, the colors are used to differentiate between the three categories (substantiated, unsubstantiated, and other), but here they are applied to proportions rather than raw counts. This consistency helps reinforce the clarity of the comparison across the ethnic groups without introducing any visual confusion. Similarly, using coral and blue instead of red & green kept the visual accessible for color blind individuals while still distinguishing the categories.
+            </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Final Reflection</h2>
+
+        <p>Creating these visualizations revealed the profound influence design choices have on data interpretation. I found the deceptive visualization surprisingly simple to construct, leveraging people's tendency to accept numerical presentations at face value without scrutiny. Though I recognized this approach lacked fairness in representation, its persuasive power was undeniable. In contrast, developing the honest chart required deeper analytical consideration. Normalizing for officer population proportions produced a more accurate representation, although it was with less immediate visual impact.
+            This exercise demonstrated the significant responsibility that accompanies visualization design. I now understand that ethical data presentation extends beyond mere numerical display as it demands providing complete context to prevent misinterpretation. I believe a properly persuasive visualization maintains clarity, and transparency. It avoids data manipulation that advances biased narratives. Even subtle distortions intended to strengthen an argument can cross ethical boundaries. But the fundamental purpose of data visualization is to enhance understanding rather than selective persuasion.
+            The stark contrast between these two approaches illuminated how easily visualization can either illuminate truth or obscure it, depending on the designer's choices and intentions. I have gained a deeper appreciation for the ethical dimensions of data representation through this process.
+            </p>
+      </section>
+    </main>
+  </body>
+</html>
